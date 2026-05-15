@@ -7,7 +7,7 @@ import {items} from './items';
 // for each items use product card component to display product 
 
 
-export default function ProductList () {
+export default function ProductList ({ fuckThis }) {
     
 return (
     <div>
@@ -15,6 +15,7 @@ return (
         <div className='product-list'>
         {items.map(item => (
             <ProductCard
+            fuckThis = {() => fuckThis(item) }
             key={item.id}
             name={item.name}
             price={item.price}

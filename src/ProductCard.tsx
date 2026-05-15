@@ -4,9 +4,9 @@ import React, {useState} from "react"
 // function ProductCard2 (price) {
 //   return price = price * 2; 
 // }
-type Props = { image: string, name: string, price: number, category: string }
+type Props = { image: string, name: string, price: number, category: string, fuckThis: () => void}
 
-function ProductCard({image, name, price, category }: Props): React.JSX.Element{
+function ProductCard({image, name, price, category, fuckThis }: Props): React.JSX.Element{
   // id, name , price, category
   const [quantity, setQuantity] = useState(1);
 
@@ -21,7 +21,7 @@ function ProductCard({image, name, price, category }: Props): React.JSX.Element{
 				<span>{quantity}</span>
 				<button onClick={() => setQuantity(Q => Q + 1)}>+</button>
 			</div>
-			<button className='add-to-cart'>Add to cart</button>
+			<button onClick = {() => fuckThis()} className='add-to-cart'>Add to cart</button>
     </div>
   )
 }
